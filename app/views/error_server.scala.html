@@ -1,0 +1,53 @@
+@(message: String)
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" type="image/png" sizes="16x16" href="@routes.Assets.versioned("images/favicon.png")">
+        <title>Mell Plus Informatique</title>
+            <!-- Bootstrap Core CSS -->
+        <link href="@routes.Assets.versioned("bower_components/bootstrap/dist/css/bootstrap.min.css")" rel="stylesheet">
+            <!-- animation CSS -->
+        <link href="@routes.Assets.versioned("css/animate.css")" rel="stylesheet">
+            <!-- Custom CSS -->
+        <link href="@routes.Assets.versioned("css/style.css")" rel="stylesheet">
+            <!-- color CSS -->
+        <link href="@routes.Assets.versioned("css/colors/blue.css")" id="theme" rel="stylesheet">
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+            <!-- Preloader -->
+        <div class="preloader">
+            <div class="cssload-speeding-wheel"></div>
+        </div>
+        <section id="wrapper" class="error-page">
+            <div class="error-box">
+                <div class="error-body text-center">
+                    <h1>500</h1>
+                    <h3 class="text-uppercase">
+                        Oups erreur serveur, veuillez contacter l'administrateur en lui indiquant le message ci-dessous.</h3>
+                    <p class="text-muted m-t-30 m-b-30">@message</p>
+                    <a href="/" class="btn btn-info btn-rounded waves-effect waves-light m-b-40">
+                        Retournez à la page d'accueil</a> </div>
+                <footer class="footer text-center">2016 © Elite Admin.</footer>
+            </div>
+        </section>
+
+            <!-- jQuery -->
+        <script src="@routes.Assets.versioned("bower_components/jquery/dist/jquery.min.js")"></script>
+            <!-- Bootstrap Core JavaScript -->
+        <script src="@routes.Assets.versioned("bower_components/bootstrap/dist/js/bootstrap.min.js")"></script>
+            <!-- Custom Theme JavaScript -->
+        <script src="@routes.Assets.versioned("js/custom.js")"></script>
+
+    </body>
+</html>

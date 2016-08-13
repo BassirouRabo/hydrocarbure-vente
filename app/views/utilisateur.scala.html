@@ -1,0 +1,192 @@
+@(utilisateur: Utilisateur)
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" type="image/png" sizes="16x16" href="@routes.Assets.versioned("images/favicon.png")">
+        <title>MPI | Utilisateurs</title>
+            <!-- Bootstrap Core CSS -->
+        <link href="@routes.Assets.versioned("bower_components/bootstrap/dist/css/bootstrap.min.css")" rel="stylesheet">
+            <!-- Menu CSS -->
+        <link href="@routes.Assets.versioned("bower_components/sidebar-nav/dist/sidebar-nav.min.css")" rel="stylesheet">
+            <!-- animation CSS -->
+        <link href="@routes.Assets.versioned("css/animate.css")" rel="stylesheet">
+            <!-- Custom CSS -->
+        <link href="@routes.Assets.versioned("css/style.css")" rel="stylesheet">
+            <!-- color CSS -->
+        <link href="@routes.Assets.versioned("css/colors/blue.css")" id="theme" rel="stylesheet">
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body class="fix-sidebar">
+            <!-- Preloader -->
+        <div class="preloader">
+            <div class="cssload-speeding-wheel"></div>
+        </div>
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top m-b-0">
+                <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+
+                    <ul class="nav navbar-top-links navbar-left hidden-xs">
+                        <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+
+                    <ul class="nav" id="side-menu">
+                        <li class="nav-small-cap m-t-10">--- Produits</li>
+
+
+                        <li> <a href="/vehicules" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Véhicule</span></a></li>
+
+                        <li> <a href="/produits" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Hydrocarbure</span></a></li>
+
+                        <li class="nav-small-cap m-t-10">--- Personnel</li>
+                        <li> <a href="/clients" class="waves-effect"><i data-icon="B" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Clients</span></a></li>
+                        <li> <a href="/chauffeurs" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Transporteur </span></a></li>
+
+                        <li class="nav-small-cap m-t-10">--- Maintenance</li>
+                        <li> <a href="/maintenances" class="waves-effect"><i data-icon="B" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Nouveau</span></a></li>
+                        <li> <a href="/maintenances/ticket/ouvert" class="waves-effect"><i data-icon="B" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Tickets ouverts</span></a></li>
+                        <li> <a href="/maintenances/ticket/ferme" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Tickets fermés </span></a></li>
+
+                        <li class="nav-small-cap m-t-10">--- Factures</li>
+                        <li> <a href="/factures-proformas" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Proforma </span></a></li>
+                        <li> <a href="/bons-livraisons" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Bon de livraison </span></a></li>
+                        <li> <a href="/factures-definitives" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Définitive </span></a></li>
+
+                        <li class="nav-small-cap m-t-10">--- Administration</li>
+                        <li> <a href="/utilisateurs" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Utilisateurs </span></a></li>
+
+
+                        <li class="nav-small-cap m-t-10">--- Rapport</li>
+                        <li> <a href="/rapport1" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Vente </span></a></li>
+                        <li> <a href="/rapport2" class="waves-effect"><i data-icon="A" class="linea-icon linea-elaborate fa-fw"></i> <span class="hide-menu">
+                            Livraison </span></a></li>
+
+                        <li><a href="/deconnexion" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">
+                            Deconnexion</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row bg-title">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                            <h4 class="page-title">Modification d'un compte utilisateur</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            @if(flash.containsKey("error")) {
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    @flash.get("error")
+                                </div>
+                            }
+                            @if(flash.containsKey("success")) {
+                                <div class="alert alert-success alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    @flash.get("success")</div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="white-box">
+                                <div class="row">
+                                    <div class="col-sm-12 col-xs-12">
+                                        <form method="post" action="/utilisateurs/@utilisateur.getId/update">
+                                            <div class="form-group">
+                                                <label for="nom">Nom</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="ti-user"></i></div>
+                                                    <input name="nom" type="text" class="form-control" id="nom" value="@utilisateur.getNom">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="ti-email"></i></div>
+                                                    <input name="email" type="email" class="form-control" id="email" value="@utilisateur.getEmail">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="telephone">Téléphone</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="ti-microphone"></i></div>
+                                                    <input name="telephone" type="tel" class="form-control" id="telephone" value="@utilisateur.getTelephone">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Confirm Password</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="ti-lock"></i></div>
+                                                    <input name="password" type="password" class="form-control" id="password" value="@utilisateur.getPassword">
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-danger waves-effect waves-light m-r-10">
+                                                Modifier</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                    <!-- /.container-fluid -->
+                <footer class="footer text-center"> 2016 &copy;
+                    Mell Plus Informatique. Designed by <a href="http://www.apkode.net">APKode.net</a> </footer>
+            </div>
+                <!-- /#page-wrapper -->
+        </div>
+            <!-- /#wrapper -->
+            <!-- jQuery -->
+        <script src="@routes.Assets.versioned("bower_components/jquery/dist/jquery.min.js")"></script>
+            <!-- Bootstrap Core JavaScript -->
+        <script src="@routes.Assets.versioned("bower_components/bootstrap/dist/js/bootstrap.min.js")"></script>
+            <!-- Menu Plugin JavaScript -->
+        <script src="@routes.Assets.versioned("bower_components/sidebar-nav/dist/sidebar-nav.min.js")"></script>
+            <!--slimscroll JavaScript -->
+        <script src="@routes.Assets.versioned("js/jquery.slimscroll.js")"></script>
+            <!--Wave Effects -->
+        <script src="@routes.Assets.versioned("js/waves.js")"></script>
+            <!-- Custom Theme JavaScript -->
+        <script src="@routes.Assets.versioned("js/custom.js")"></script>
+            <!-- jQuery peity -->
+        <script src="@routes.Assets.versioned("bower_components/peity/jquery.peity.min.js")"></script>
+        <script src="@routes.Assets.versioned("bower_components/peity/jquery.peity.init.js")"></script>
+            <!--Style Switcher -->
+        <script src="@routes.Assets.versioned("bower_components/styleswitcher/jQuery.style.switcher.js")"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+
+GET         /                   controllers.HomeController.index
+GET         /connexion          controllers.HomeController.connexion()
+GET         /deconnexion        controllers.HomeController.deconnexion()
+GET         /inscription        controllers.HomeController.inscription()
+POST        /connexion          controllers.HomeController.authentification()
+GET         /error-client       controllers.HomeController.errorClient()
+GET         /error-server       controllers.HomeController.errorServer(message: String)
+
+# Utilisateur
+GET         /utilisateurs                   controllers.UtilisateurController.reads()
+POST        /utilisateurs                   controllers.UtilisateurController.create()
+GET         /utilisateurs/:id               controllers.UtilisateurController.read(id: Long)
+POST        /utilisateurs/:id/update        controllers.UtilisateurController.update(id: Long)
+GET         /utilisateurs/:id/delete        controllers.UtilisateurController.delete(id: Long)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
